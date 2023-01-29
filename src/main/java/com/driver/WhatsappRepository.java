@@ -35,8 +35,8 @@ public class WhatsappRepository {
         else if(user.size()>2){
 
             int groupNo = 0;
-            for(String group1:groupnames){
-                if(group1.substring(0,6).equals("Group "))
+            for(Group group1 :groupListHashMap.keySet()){
+                if(group1.getNumberOfParticipants()>2)
                     groupNo++;
             }
             group.setName("Group "+groupNo);
