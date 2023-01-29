@@ -129,6 +129,8 @@ public class WhatsappRepository {
         List<User> userList = groupListHashMap.get(group1);
         userList.remove(user);
         group1.setNumberOfParticipants(userList.size());
+        if(userList.size()==2)
+            group1.setName(userList.get(1).getName());
         groupListHashMap.put(group1,userList);
 
         int groupMessages = 0;
