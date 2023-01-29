@@ -32,11 +32,11 @@ public class WhatsappRepository {
             groupnames.add(group.getName());
             groupListHashMap.put(group,user);
         }
-        else{
+        else if(user.size()>2){
 
             int groupNo = 0;
             for(String group1:groupnames){
-                if(group1.substring(0,5).equals("Group"))
+                if(group1.substring(0,6).equals("Group "))
                     groupNo++;
             }
             group.setName("Group "+groupNo);
@@ -123,7 +123,7 @@ public class WhatsappRepository {
             }
 
         }
-        if(isExists ==false){
+        if(!isExists){
             throw new Exception("User not found");
         }
         List<User> userList = groupListHashMap.get(group1);
